@@ -1,0 +1,24 @@
+name: Upload Files to Web Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Manually trigger the action from GitHub UI
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.KITTEN_SSH_PRIVATE_KEY }}
+
+      - name: Upload Files to Web Server
+        run: |
+          rsync -av --delete ./Gaia/2025-C-litter/kittenWeights.js ${{ secrets.KITTEN_LOGIN_USERNAME_AND_URL }}:public_html/kittenweights/Gaia/2025-C-litter/
