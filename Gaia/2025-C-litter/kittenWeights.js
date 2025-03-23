@@ -21,7 +21,7 @@ const myChart = new Chart(ctx, {
                 label: 'Pinkki',
                 data: pinkWeights,
                 borderColor: [
-                    '#f03e3e',
+                    '#ffb6c1',
                 ],
                 borderWidth: 6,
                 fill: false,
