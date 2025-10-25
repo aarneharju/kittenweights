@@ -50,14 +50,14 @@ const myChart = new Chart(ctx, {
                 label: 'Punainen',
                 data: redWeights,
                 borderColor: [
-                    '#ff3352ff',
+                    '#ff3352',
                 ],
                 borderWidth: 6,
                 fill: false,
             },
             {
                 label: 'Musta',
-                data: blakcWeights,
+                data: blackWeights,
                 borderColor: [
                     '#383838ff',
                 ],
