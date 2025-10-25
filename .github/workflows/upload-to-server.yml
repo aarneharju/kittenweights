@@ -24,6 +24,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.KITTEN_SSH_PRIVATE_KEY }}
 
+      # Upload kittenWeights.js OF THE CURRENT LITTER to the web server, remember to change the path for each new litter
       - name: Upload Files to Web Server
         run: |
-          rsync -av --delete ./Gaia/2025-C-litter/kittenWeights.js ${{ secrets.KITTEN_LOGIN_USERNAME_AND_URL }}:public_html/kittenweights/Gaia/2025-C-litter/
+          rsync -av --delete ./Aphrodite/2025-D-litter/kittenWeights.js ${{ secrets.KITTEN_LOGIN_USERNAME_AND_URL }}:public_html/kittenweights/Aphrodite/2025-D-litter/
